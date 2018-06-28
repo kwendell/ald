@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ALD</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+  <style>#container { padding: 10 px; background-color: #EEE;}
+        
+ #container div{ font-size: 48px; font-family: sans-serif;color: #0080A8;}
+</style>
+</head>
+
+<body>
+<div id="container"></div>
+  <script type="text/babel">
+
+
+var destination =  document.querySelector('#container'); 
+var DataDictionary = React.createClass({
+render:function() {
+ var liStyle = {
+	    fontSize: 12,
+		fontFamily: "sans-serif",
+		color: "#0080A8",
+	   };
+
+
+return(<p><ul><li style={liStyle}>list item</li></ul></p>);}
+});
+
+ReactDOM.render(<div><DataDictionary /></div>, destination );
+  </script>
+</body>
+
+</html>
