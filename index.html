@@ -35,7 +35,7 @@ var Design = React.createClass({
   
   };
   
-  return <div style={designStyle}>Design</div>}
+  return <div style={designStyle}><h1>Design</h1></div>}
 });  
 var DataDictionary = React.createClass({
 
@@ -57,11 +57,14 @@ render:function() {
        borderColor: '#d6d7da',
 	   borderRadius: 4,
 	   display: "inline-block",
+	   width: 200,
 	   
 	};
 	  
 	  
-       var mnems = ["regularPrice","salePrice"];
+       var mnems = ["regularPrice","salePrice","productDescription", "unitOfMeasure", "EAN", "SKU",
+	   "regularUnitPrice","saleUnitPrice"];
+	   mnems.sort();
 	   var liArray = [];
 	   for (var i=0;i<mnems.length;i++)  {
 	   liArray.push(<li key={i} style={liStyle}>{mnems[i]}</li>)
