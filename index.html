@@ -7,7 +7,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
   <style>#container { padding: 10 px; background-color: #EEE;}
         
- #container div{ font-size: 48px; font-family: sans-serif;color: #0080A8;}
+ #container div{ font-size: 48px; font-family: sans-serif;}
+ ul {list-style:none}
+
+ 
+ 
 </style>
 </head>
 
@@ -17,19 +21,59 @@
 
 
 var destination =  document.querySelector('#container'); 
+var AldScreen = React.createClass({
+  render: function() {return <div><DataDictionary/><Design/></div>}});
+  
+var Design = React.createClass({
+  
+  render: function() {
+  
+  var designStyle = {
+     color: "#333333",
+  
+  };
+  
+  return <div style={designStyle}>Design</div>}
+});  
 var DataDictionary = React.createClass({
+
 render:function() {
  var liStyle = {
 	    fontSize: 12,
 		fontFamily: "sans-serif",
 		color: "#0080A8",
 	   };
+	 
+	var divStyle = {
+	   display:"inline-block",
+	  
+	   padding: 1,
+	   margin: 1,
+	   
+	};
+	  
+	  
+       var mnems = ["regularPrice","salePrice"];
+	   var liArray = [];
+	   for (var i=0;i<mnems.length;i++)  {
+	   liArray.push(<li key={i} style={liStyle}>{mnems[i]}</li>)
+	   }
+	   
+	  
+	  
+	   return (
+	     <div style={divStyle} ><ul>
+		 {liArray}
+		 </ul></div>
+      );
+
+}
+}
+);
+
+ReactDOM.render(<div><AldScreen /></div>, destination );
 
 
-return(<p><ul><li style={liStyle}>list item</li></ul></p>);}
-});
-
-ReactDOM.render(<div><DataDictionary /></div>, destination );
   </script>
 </body>
 
