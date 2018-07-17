@@ -22,7 +22,7 @@
 
 var destination =  document.querySelector('#container'); 
 var AldScreen = React.createClass({
-  render: function() {return <div><DataDictionary/><Design/></div>}});
+  render: function() {return <div><div><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
   
 var Design = React.createClass({
   
@@ -31,19 +31,49 @@ var Design = React.createClass({
   var designStyle = {
     
 	display: "inline-block",
-	
+
 	padding: 20,
   
   };
   
-  return <div style={designStyle}><h1>Design</h1></div>}
+  return <div style={designStyle}><div><img src="img/tagDesignAreaReduced.gif"></img></div></div>}
 });  
+
+var InfoFooter = React.createClass({
+
+  render: function() {
+  
+  var ddStyle = {
+     fontSize: 10,
+	 float: "left",
+	 width: "70%",
+	 padding: 0,
+	 margin: 0
+  };
+   var dtStyle = {
+     fontSize: 10,
+	 float: "left",
+	 width: "30%",
+	  padding: 0,
+	 margin: 0
+  };
+  return (<div style={dtStyle}><dl>
+  <dt style={dtStyle}>Tag Type</dt>
+  <dd style={ddStyle}>eTag 210</dd>
+  <dt style={dtStyle}>Scenario</dt>
+  <dd style={ddStyle}>REGULAR</dd>
+   <dt style={dtStyle}>Dimension</dt>
+  <dd style={ddStyle}>212 x 104</dd>
+</dl></div>);}
+
+});
+
 var DataDictionary = React.createClass({
 
 render:function() {
  var liStyle = {
 	    fontSize: 14,
-		fontFamily: "sans-serif",
+		fontFamily: "monospace",
 		color: "#0080A8",
 	   };
 	 
