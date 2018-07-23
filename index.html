@@ -7,8 +7,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
   <style>#container { padding: 10 px; background-color: #E4EDF4;}
         
- #container div{ font-size: 48px; font-family: sans-serif;}
+ #container div{ font-size: 48px; font-family: sans-serif}
  ul {list-style:none}
+ #header { float: center; margin-left: 10px; width:10%;height:100px;
+           }
+#header img {width: 250px; height: 50px;}
 
  
  
@@ -21,8 +24,17 @@
 
 
 var destination =  document.querySelector('#container'); 
+
+var Header = React.createClass({
+
+  render: function() {
+  return <div id="header"><img src="img/Final-logo-landscape.jpg"></img></div>
+  }
+
+});
+
 var AldScreen = React.createClass({
-  render: function() {return <div><div><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
+  render: function() {return <div><div><Header/><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
   
 var Design = React.createClass({
   
@@ -77,6 +89,7 @@ render:function() {
 	    fontSize: 14,
 		fontFamily: "monospace",
 		color: "#0080A8",
+		float: "left",
 	   };
 	 
 	var divStyle = {
