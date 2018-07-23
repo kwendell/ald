@@ -9,9 +9,9 @@
         
  #container div{ font-size: 48px; font-family: sans-serif}
  ul {list-style:none}
- #header { float: center; margin-left: 10px; width:10%;height:100px;
+ #header { float: center; margin-left: 0px; width:10%;height:100px;
            }
-#header img {width: 250px; height: 50px;}
+#header img { height: 50px; }
 
  
  
@@ -90,6 +90,7 @@ render:function() {
 		fontFamily: "monospace",
 		color: "#0080A8",
 		float: "left",
+		backgroundColor: "#FFFFFF",
 	   };
 	 
 	var divStyle = {
@@ -106,6 +107,8 @@ render:function() {
 	   width: 200,
 	   
 	};
+	
+	var trStyle = {backgroundColor:"#FFFFFF"};
 	  
 	  
        var mnems = ["regularPrice","salePrice","productDescription", "unitOfMeasure", "EAN", "SKU",
@@ -113,15 +116,16 @@ render:function() {
 	   mnems.sort();
 	   var liArray = [];
 	   for (var i=0;i<mnems.length;i++)  {
-	   liArray.push(<li key={i} style={liStyle}>{mnems[i]}</li>)
+	   liArray.push(<tr style={trStyle}><td key={i} style={liStyle}>{mnems[i]}</td></tr>)
 	   }
 	   
 	  
 	  
 	   return (
-	     <div style={divStyle} ><ul>
+	     <div style={divStyle} >
+		 <table>
 		 {liArray}
-		 </ul></div>
+		 </table></div>
       );
 
 }
