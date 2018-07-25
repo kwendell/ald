@@ -11,6 +11,7 @@
 	      padding: 50px;
 		  background-color: #FFF;
 		  }
+		
 	</style>
   
 </head>
@@ -26,21 +27,21 @@
 	     height: this.props.height,
 		 width:  this.props.width,
 		 backgroundColor: this.props.color,
-		borderRadius: 5,
-        borderWidth: 6,
-        borderColor: 'red',
-		  // WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-		  //filter: "drop-shadow(0px 0px 5px #666)"
+		  border: '10px solid white', 
+		  borderRadius:5,
+		
+		   WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+		  filter: "drop-shadow(0px 0px 5px #666)"
 	   };
 	   
-	   return (<div style={squareStyle}>
+	   return (<div  style={squareStyle}>
 	   </div>);
 	  } 
 	});
 	 var Card = React.createClass({
       render: function() {
 	  var cardStyle =  {
-	      height: this.props.height,
+	   
 		  width: "33%",
 		  padding: 0,
 		  backgroundColor: "#FFF",
@@ -61,7 +62,7 @@
 			   margin: 0
 			   };
 			   return (
-			     <div style={labelStyle}>{this.props.tagType}</div>);
+			     <div style={labelStyle}><input type="checkbox">{this.props.tagType}</input></div>);
 	    }
 	});
 
@@ -71,8 +72,12 @@
 	<Card color="#BBBBBB" tagType="eTag250"  height="64" width="240" />
 	<Card color="#BBBBBB" tagType="eTag150W"  height="64" width="128" />
 	<Card color="#BBBBBB" tagType="eTag400W"  height="128" width="240" />
-	<Card color="#D3D3D3" tagType="eTag210"  height="80" width="210" />
-	<Card color="#D3D3D3" tagType="eTag290"  height="110" width="290" />
+	
+	<Card color="#D3D3D3" tagType="eTag210E"  height="104" width="212" />
+	<Card color="#D3D3D3" tagType="eTag290E"  height="128" width="296" />
+	<Card color="#D3D3D3" tagType="eTag420E"  height="300" width="400" />
+	
+	
 	
 	</div>,
     document.querySelector("#container")
