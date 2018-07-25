@@ -24,13 +24,13 @@
 	  render: function() {
 	   var squareStyle = {
 	     height: this.props.height,
-		 width:240,
+		 width:  this.props.width,
 		 backgroundColor: this.props.color,
-		borderRadius: 4,
-        borderWidth: 0.5,
+		borderRadius: 5,
+        borderWidth: 6,
         borderColor: 'red',
-		//   WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-		 // filter: "drop-shadow(0px 0px 5px #666)"
+		  // WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+		  //filter: "drop-shadow(0px 0px 5px #666)"
 	   };
 	   
 	   return (<div style={squareStyle}>
@@ -41,13 +41,14 @@
       render: function() {
 	  var cardStyle =  {
 	      height: this.props.height,
-		  width: 240,
+		  width: "33%",
 		  padding: 0,
 		  backgroundColor: "#FFF",
+		  float:"left",
 		
 		};
-	   return (<div style={cardStyle}><Square color={this.props.color} height={this.props.height} />
-	                                  <Label color={this.props.tagType} /></div>);
+	   return (<div style={cardStyle}><Square color={this.props.color} height={this.props.height} width={this.props.width} />
+	                                  <Label tagType={this.props.tagType} /></div>);
 	   }
     });
 	
@@ -60,14 +61,19 @@
 			   margin: 0
 			   };
 			   return (
-			     <p style={labelStyle}>{this.props.color}</p>);
+			     <div style={labelStyle}>{this.props.tagType}</div>);
 	    }
 	});
 
 
   ReactDOM.render(
     <div>
-	<Card color="#BBBBBB" tagType="eTag250"  height="64" />
+	<Card color="#BBBBBB" tagType="eTag250"  height="64" width="240" />
+	<Card color="#BBBBBB" tagType="eTag150W"  height="64" width="128" />
+	<Card color="#BBBBBB" tagType="eTag400W"  height="128" width="240" />
+	<Card color="#D3D3D3" tagType="eTag210"  height="80" width="210" />
+	<Card color="#D3D3D3" tagType="eTag290"  height="110" width="290" />
+	
 	</div>,
     document.querySelector("#container")
   );
