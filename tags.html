@@ -10,6 +10,18 @@
 	   #container {
 	      padding: 50px;
 		  background-color: #F;
+		 // float:left;
+		  }
+	#leftPane {
+	      padding: 50px;
+		  background-color: #E4DDF4;
+		  float: left;
+		  width: 30px;
+		 
+		  height: 300px;
+		  margin: 10px;
+		  
+		  
 		  }
 		
 	</style>
@@ -17,7 +29,10 @@
 </head>
 
 <body>
+<div id="bigPane">
+<div id="leftPane">left</div>
 <div id="container"></div>
+</div>
   <script type="text/babel">
     
 	var Square = React.createClass(
@@ -52,6 +67,7 @@
 		  float:"left",
 		
 		};
+		
 	   return (<div style={cardStyle}><Square color={this.props.color} height={this.props.height} width={this.props.width}  />
 	                                  <Label tagType={this.props.tagType} /></div>);
 	   }
