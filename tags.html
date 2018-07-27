@@ -7,29 +7,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
   
     <style>
+	body {
+	background-color:#E1EEF7;
+	background-color:#FF;
+	}
 	   #container {
-	      padding: 50px;
-		  background-color: #F;
+	      padding: 30px;
+		  background-color: #E1EEF7;
 		  width:70%;
 		  float: left;
 		  }
     #submit {
 	 border: 6px solid #336;
 	}
+	
 	#rightPane {
-	      padding: 20px;
+	      padding: 30px;
 		  background-color: #F;
 		  float: left;
 		  width: 12%;
 		  border: 6px solid #336;
 		  height: 300px;
-		  margin: 10px;
+		  margin-top: 30px;
 		  font-family: sans-serif;
 		  font-size: 1em;
 		  font-weight: bold;
-		  
-		  
-		  }
+		  position: relative;
+		  background-color:#E1EEF7;
+		}
 		  
 	label {
 	 font-family: sans-serif;
@@ -43,11 +48,21 @@
 	 margin-top: 10px;
 	 }
 	 
+	 #rightPane > div {
+	     position: absolute;
+        top: 40%;
+        left: 40%;
+        height: 30%;
+		width: 50%;
+        margin: -15% 0 0 -25%;
+	 }
+	 
 	 .tagGroup {
 	  padding: 25px;
 		  background-color: #0;
 		  width:100%;
 		  float: left;
+		   
 		  }
 	 
 	 .lcdTagGroup {
@@ -68,11 +83,12 @@
 
 <div id="container"></div>
 </div>
-<div id="rightPane"><label for="pricingScenario">Pricing Scenario</label>
+<div id="rightPane"><div><label for="pricingScenario">Pricing Scenario</label>
    
 	    <input   id="pricingScenario" placeholder="pricing scenario">
 		</input>
 	    <button type="submit">Create</button>
+		<div>
 	
 </div>
   <script type="text/babel">
@@ -105,8 +121,9 @@
 	   
 		  width: "25%",
 		  padding: 0,
-		  backgroundColor: "#FFF",
+		  backgroundColor: "#E1EEF7",
 		  float:"left",
+		  
 		
 		};
 		
@@ -137,9 +154,9 @@
   ReactDOM.render(
     <div>
 	<div className="tagGroup">
-	<Card color="#BBBBBB" tagType="eTag150W"  height="16" width="32" />
-	<Card color="#BBBBBB" tagType="eTag250"  height="16" width="60" />
-	<Card color="#BBBBBB" tagType="eTag400W"  height="32" width="60" />
+	<Card color="#A0A295" tagType="eTag150W"  height="16" width="32" />
+	<Card color="#A0A295" tagType="eTag250"  height="16" width="60" />
+	<Card color="#A0A295" tagType="eTag400W"  height="32" width="60" />
 
 	<Card color="#D3D3D3" tagType="eTag150E2"  height="35" width="35" />
 	<Card color="#D3D3D3" tagType="eTag150Color"  height="35" width="35" />
