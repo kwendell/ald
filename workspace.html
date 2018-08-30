@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ALD</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+  <style>#container { padding: 10 px; background-color: #E4EDF4;}
+        
+ #container div{ font-size: 48px; font-family: sans-serif}
+ ul {list-style:none}
+ #header { float: center; margin-left: 0px; width:10%;height:100px;
+           }
+#header img { height: 50px; }
+
+ 
+ 
+</style>
+</head>
+
+<body>
+<div id="container"></div>
+  <script type="text/babel">
+
+
+var destination =  document.querySelector('#container'); 
+
+var Header = React.createClass({
+
+  render: function() {
+  return <div id="header"><img src="img/Final-logo-landscape.jpg"></img></div>
+  }
+
+});
+
+var AldScreen = React.createClass({
+  render: function() {return <div><div><Header/><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
+  
+var Design = React.createClass({
+  
+  render: function() {
+  
+  var designStyle = {
+    
+	display: "inline-block",
+
+	padding: 20,
+  
+  };
+  
+  return <div style={designStyle}><div><img src="img/tagDesignAreaReduced.gif"></img></div></div>}
+});  
+
+var InfoFooter = React.createClass({
+
+  render: function() {
+  
+  var ddStyle = {
+     fontSize: 11,
+	 float: "left",
+	 width: "70%",
+	 padding: 0,
+	 margin: 0,
+	
+  };
+   var dtStyle = {
+     fontSize: 11,
+	 float: "left",
+	 width: "30%",
+	  padding: 0,
+	 margin: 0,
+	 
+  };
+  return (<div style={dtStyle}><dl>
+  <dt style={dtStyle}>Tag Type</dt>
+  <dd style={ddStyle}>eTag 210</dd>
+  <dt style={dtStyle}>Scenario</dt>
+  <dd style={ddStyle}>REGULAR</dd>
+   <dt style={dtStyle}>Dimension</dt>
+  <dd style={ddStyle}>212 x 104</dd>
+</dl></div>);}
+
+});
+
+var DataDictionary = React.createClass({
+
+render:function() {
+ var liStyle = {
+	    fontSize: 14,
+		fontFamily: "monospace",
+		color: "#0080A8",
+		
+		backgroundColor: "#FFFFFF",
+		
+	   };
+	 
+	var divStyle = {
+	   display:"inline-block",
+	   
+	   float: "left",
+	 
+	   padding: 0,
+	   margin: 0,
+	   borderWidth: 0.5,
+       borderColor: '#d6d7da',
+	   borderRadius: 4,
+	   display: "inline-block",
+	   width: 200,
+	   
+	};
+	
+	var trStyle = {backgroundColor:"#FFFFFF"};
+	  var tdStyle = {height:"20px",};
+	  
+       var mnems = ["regularPrice","regularUnitPrice","salePrice","saleUnitPrice", "unitOfMeasure", "EAN", "SKU"];
+	   mnems.sort();
+	   var liArray = [];
+	   for (var i=0;i<mnems.length;i++)  {
+	   liArray.push(<tr style={trStyle}><td key={i} style={liStyle}>{mnems[i]}</td><td key={i+1000} style={liStyle} ><form><button  key={i+2000} type="submit">+</button></form></td></tr>)
+	   }
+	   
+	  
+	  
+	   return (
+	     <div style={divStyle} >
+		 <table>
+		 {liArray}
+		 </table></div>
+      );
+
+}
+}
+);
+
+ReactDOM.render(<div><AldScreen /></div>, destination );
+
+
+  </script>
+</body>
+
+</html>
