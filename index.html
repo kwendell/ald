@@ -22,7 +22,7 @@
 
 #myTable th, #myTable td {
     text-align: left; /* Left-align text */
-    padding: 8px; /* Add padding */
+    padding: 4px; /* Add padding */
 }
 
 #myTable tr {
@@ -34,6 +34,8 @@
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
 }
+
+
 
 td a{width:100%;display:block;}
 
@@ -68,42 +70,62 @@ var HomeScreen = React.createClass({
     <th >Tag Type</th>
     <th >Sell Method</th>
   </tr>
+  
+  <tr onClick={this.doSomething}>
+    <td>eTag150</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag150</td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag150 Color</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag150 Color</td>
+    <td>DEFAULT</td>
+  </tr>
   <tr onClick={this.doSomething}>
     <td>eTag210</td>
     <td>PROMO</td>
   </tr>
   
-  <tr>
+  <tr  onClick={this.doSomething}>
     <td>eTag210</td>
     <td>DEFAULT</td>
   </tr>
   
-  <tr>
+  <tr  onClick={this.doSomething}>
     <td>eTag210 Color</td>
     <td>PROMO</td>
   </tr>
   
-  <tr>
+  <tr  onClick={this.doSomething}>
     <td>eTag290 Color</td>
     <td>DEFAULT</td>
   </tr>
   
-  <tr>
+  <tr  onClick={this.doSomething}>
     <td>eTag290</td>
     <td>PROMO</td>
   </tr>
    
-  <tr>
+  <tr  onClick={this.doSomething}>
     <td>eTag290</td>
     <td>DEFAULT</td>
   </tr>
   
-  <tr>
+  <tr onClick={this.doSomething}>
     <td>eTag290 Color</td>
     <td>PROMO</td>
   </tr>
   
-  <tr>
+  <tr onClick={this.doSomething}>
     <td>eTag290 Color</td>
     <td>DEFAULT</td>
   </tr>
