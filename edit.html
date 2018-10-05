@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ALD</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+  <style>#container { padding: 10 px; background-color: #E4EDF4;}
+        
+ #container div{ font-size: 48px; font-family: sans-serif}
+ ul {list-style:none}
+ #header { float: center; margin-left: 0px; width:10%;height:100px;
+           }
+ #header img { height: 50px; }
+ 
+ #myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 14px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 4px; /* Add padding */
+}
+
+#myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+
+#myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+
+
+
+td a{width:100%;display:block;}
+
+
+ 
+ 
+</style>
+</head>
+
+<body>
+
+<div id="container"></div>
+  <script type="text/babel">
+
+var destination =  document.querySelector('#container'); 
+
+var Header = React.createClass({
+
+  render: function() {
+  return <div id="header"><img src="img/Final-logo-landscape.jpg"></img></div>
+  }
+
+});
+
+var HomeScreen = React.createClass({
+  render: function() {return <div><Header/><LayoutTree/></div>}});
+  
+  var LayoutTree = React.createClass({
+  doSomething: function(e) {console.log("do something");},
+  render: function() {return <div><table id="myTable"><tbody>
+  <tr >
+    <th >Tag Type</th>
+    <th >Sell Method</th>
+  </tr>
+  
+  <tr onClick={this.doSomething}>
+    <td>eTag150</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag150</td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag150 Color</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag150 Color</td>
+    <td>DEFAULT</td>
+  </tr>
+  <tr onClick={this.doSomething}>
+    <td>eTag210</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag210</td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag210 Color</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag290 Color</td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td>eTag290</td>
+    <td>PROMO</td>
+  </tr>
+   
+  <tr  onClick={this.doSomething}>
+    <td>eTag290</td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr onClick={this.doSomething}>
+    <td>eTag290 Color</td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr onClick={this.doSomething}>
+    <td>eTag290 Color</td>
+    <td>DEFAULT</td>
+  </tr>
+ 
+ </tbody>
+</table></div>}})
+
+  ReactDOM.render(<div><HomeScreen /></div>, destination );
+  </script>
+</body>
+
+</html>
