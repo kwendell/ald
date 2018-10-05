@@ -5,6 +5,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+   <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.js"></script>
   <style>#container { padding: 50 px; background-color: #EEE;}
          #container h1{ font-size: 48px; font-family: sans-serif;color: #0080A8;}
  #container div{ font-size: 42px; font-family: sans-serif;color: #0080A8;}
@@ -21,7 +22,11 @@
 
 <div id="container"></div>
   <script type="text/babel">
-
+var {Router,
+       Route,
+	   IndexRoute,
+	   IndexLink,
+	   Link} = ReactRouter;
 var destination =  document.querySelector('#container'); 
 
 var Header = React.createClass({
@@ -37,13 +42,15 @@ var HomeScreen = React.createClass({
   
   var NewOrUpdate = React.createClass({
   doSomething: function(e) {console.log("do something");},
-  render: function() {return <div><form action="">
-  <input type="radio" name="New" value="">New</input><br></br>
-  <input type="radio" name="Edit" value="f">Edit Existing</input>
+  render: function() {return <div>
+  <ul>
+  <li><IndexLink to="tags.html" activeClassName="active">New</IndexLink></li>
+  <li><IndexLink to="/" activeClassName="active">Edit</IndexLink></li>
+  </ul>
  
-</form></div>}})
+</div>}})
 
-  ReactDOM.render(<div><HomeScreen /></div>, destination );
+  ReactDOM.render(<div><Router><Route path="/" component={HomeScreen}></Route></Router></div>, destination );
   </script>
 </body>
 
