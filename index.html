@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <link rel="import" href="tags.html">
   <title>ALD</title>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
@@ -28,7 +26,7 @@ var {Router,
        Route,
 	   IndexRoute,
 	   IndexLink,
-	   Link, Square} = ReactRouter;
+	   Link} = ReactRouter;
 var destination =  document.querySelector('#container'); 
 
 var Header = React.createClass({
@@ -52,12 +50,7 @@ var HomeScreen = React.createClass({
  
 </div>}})
 
-  ReactDOM.render(<div><Router>
-                       <Route path="/" component={HomeScreen}>
-					   <IndexRoute component={HomeScreen}/>
-					   <Route path="tags.html" component={Square} />
-					   </Route></Router>
-				  </div>, destination );
+  ReactDOM.render(<div><Router><Route path="/" component={HomeScreen}></Route></Router></div>, destination );
   </script>
 </body>
 
