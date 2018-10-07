@@ -31,6 +31,12 @@ var {Router,
 var hashHistory = Router.hashHistory;
 var browserHistory = Router.browserHistory;
 var destination =  document.querySelector('#container'); 
+
+var EditLayout = React.createClass({
+   render: function() {
+   return <div>Edit Screen</div>
+   }
+});
 var NewLayout = React.createClass({
    render: function() {
    return <div>New Screen</div>
@@ -51,7 +57,7 @@ var HomeScreen = React.createClass({
   doSomething: function(e) {console.log("do something");},
   render: function() {return <div>
   <ul>
-  <li><Link to="/">Home</Link></li>
+  <li><Link to="/edit">Edit</Link></li>
   <li><Link to="/new">New</Link></li>
   
   
@@ -63,6 +69,7 @@ var HomeScreen = React.createClass({
    <Route path="/" component={HomeScreen}>
      <IndexRoute component={NewOrUpdate}/>
 	 <Route path="/new" component={NewLayout}/>
+	 <Route path="/edit" component={EditLayout} />
    </Route>
   
    
