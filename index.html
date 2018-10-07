@@ -52,7 +52,7 @@ var HomeScreen = React.createClass({
   render: function() {return <div>
   <ul>
   <li><Link to="/">Home</Link></li>
-  <li>New</li>
+  <li><Link to="/new">New</Link></li>
   
   
   </ul>
@@ -63,6 +63,7 @@ var HomeScreen = React.createClass({
    <Route path="/" component={HomeScreen}>
      <IndexRoute component={NewOrUpdate}/>
    </Route>
+   <Route path="/new" component={NewLayout}/>
    
   
   
