@@ -12,7 +12,7 @@
  #header { float: center; margin-left: 0px; width:10%;height:100px;
            }
  #header img { height: 50px; }
- input {}
+ li {list-style:none}
  
  
 </style>
@@ -26,9 +26,16 @@ var {Router,
        Route,
 	   IndexRoute,
 	   IndexLink,
-	   Link} = ReactRouter;
+	   Link, Square} = ReactRouter;
+	   
+var hashHistory = Router.hashHistory;
+var browserHistory = Router.browserHistory;
 var destination =  document.querySelector('#container'); 
-
+var NewLayout = React.createClass({
+   render: function() {
+   return <div>New Screen</div>
+   }
+});
 var Header = React.createClass({
 
   render: function() {
@@ -38,19 +45,30 @@ var Header = React.createClass({
 });
 
 var HomeScreen = React.createClass({
-  render: function() {return <div><Header/><NewOrUpdate/></div>}});
+  render: function() {return <div><Header/>{this.props.children}</div>}});
   
   var NewOrUpdate = React.createClass({
   doSomething: function(e) {console.log("do something");},
   render: function() {return <div>
   <ul>
-  <li><IndexLink to="tags.html" activeClassName="active">New</IndexLink></li>
-  <li><IndexLink to="/" activeClassName="active">Edit</IndexLink></li>
+  <li><Link to="/">Home</Link></li>
+  <li>New</li>
+  
+  
   </ul>
  
 </div>}})
 
-  ReactDOM.render(<div><Router><Route path="/" component={HomeScreen}></Route></Router></div>, destination );
+  ReactDOM.render(<Router>
+   <Route path="/" component={HomeScreen}>
+     <IndexRoute component={NewOrUpdate}/>
+   </Route>
+   
+  
+  
+   
+ 
+  </Router>, destination );
   </script>
 </body>
 
