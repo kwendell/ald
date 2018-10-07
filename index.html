@@ -62,8 +62,9 @@ var HomeScreen = React.createClass({
   ReactDOM.render(<Router>
    <Route path="/" component={HomeScreen}>
      <IndexRoute component={NewOrUpdate}/>
+	 <Route path="/new" component={NewLayout}/>
    </Route>
-   <Route path="/new" component={NewLayout}/>
+  
    
   
   
