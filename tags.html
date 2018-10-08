@@ -164,14 +164,17 @@
 	}
 	});
 	
-
-
-  ReactDOM.render(
-    <div>
+  var BigView = React.createClass({
+    render: function() {
+	return ( <div>
 	<TagGroup/>
 	<InputPricingScen/>	
 	<CreateButtonDiv/>
-	</div>,
+	</div>);}
+	});
+
+  ReactDOM.render(
+   <BigView/>,
     document.querySelector("#bigPane")
   );
   </script>
