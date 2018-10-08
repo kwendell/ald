@@ -52,7 +52,7 @@
 		 padding-top: 10px;
 	}
 	
-	button {
+	#createButtonDiv input {
 	 padding: 8px;
 	 font-size: 18px;
 	 font-family: sans-serif;
@@ -109,8 +109,18 @@
 
   <script type="text/babel">
     var CreateButtonDiv = React.createClass({
+	
 	render: function() {
-	  return(<div id="createButtonDiv"><button  type="submit">Create</button></div>);}
+	var  buttonStyle = {
+	 padding: "8",
+	 fontSize: "18",
+	 fontFamily: "sans-serif",
+	 fontWeight: "bold",
+	 backgroundColor: "#0066FF",
+	 color: "#FFF",
+	 border: "2px solid #0066FF",
+	};
+	  return(<div><input type="submit" value="Create" type="submit"/></div>);}
 	});
     var InputPricingScen = React.createClass({
 	render: function() {
@@ -176,7 +186,7 @@
 			   };
 	    
 			   return (
-			     <div style={labelStyle}><input  type="checkbox">{this.props.tagType}</input></div>);
+			     <div style={labelStyle}><input  type="checkbox">{this.props.tagType}></input></div>);
 	    }
 	});
 
@@ -190,8 +200,7 @@
 	<Card color="#A0A295" tagType="eTag150W"  height="16" width="32" />
 	<Card color="#A0A295" tagType="eTag250"  height="16" width="60" />
 	<Card color="#A0A295" tagType="eTag400W"  height="32" width="60" />
-
-	<Card color="#D1D5D5" tagType="eTag150E2"  height="35" width="35" />
+    <Card color="#D1D5D5" tagType="eTag150E2"  height="35" width="35" />
 	<Card color="#D1D5D5" tagType="eTag150Color"  height="35" width="35" />
 	<Card color="#D1D5D5" tagType="eTag210E"  height="26" width="53" />
 	<Card color="#D1D5D5" tagType="eTag210Color"  height="26" width="53" />
@@ -204,9 +213,11 @@
     <Card color="#D1D5D5" tagType="eTag750"  height="106" width="173" />
 	<Card color="#D1D5D5" tagType="eTag750Color"  height="106" width="173" />
 	</div>
-	</div> 
+	</div>
+	 
 	<div id="rightPane">{InputPricingScen}</div>
-	<div id="createButtonDiv"><button  type="submit">{CreateButtonDiv}</button></div></div>,
+	<div id="createButtonDiv"><input type="submit" value="Create" type="submit"/></div>
+	</div>,
     document.querySelector("#bigPane")
   );
   </script>
