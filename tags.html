@@ -45,6 +45,7 @@
 	
 	#createButtonDiv {
 	  float: left;
+	  float: left;
 		width: 100%;
 		text-align: center;
 		 border-top: 4px solid #25538F;
@@ -61,9 +62,7 @@
 	 border: 2px solid #0066FF;
 	}
 		  
-	label {
-	 font-family: sans-serif;
-	 }
+	
 	 
 	
 	#rightPane button {
@@ -98,42 +97,27 @@
 		  width:100%;
 		  float: left;
 		  }
-		  
-	
-		
 	</style>
-  
 </head>
 
 <body>
 <div id="bigPane">
-
-<div id="container"></div>
 </div>
 
-<form onSubmit={this.goToDesign} >
-<div id="rightPane">
- 
-    <div>
-	   <label for="pricingScenario">Pricing Scenario</label>
-       <input   id="pricingScenario" placeholder="pricing scenario" >
-		</input>
-		
-    </div>	
-</div>
-<div id="createButtonDiv"><button  type="submit">Create</button></div>
-</form>
-
-
-</div>
 
 
 
   <script type="text/babel">
+    var CreateButtonDiv = React.createClass({
+	render: function() {
+	  return(<div id="createButtonDiv"><button  type="submit">Create</button></div>);}
+	});
     var InputPricingScen = React.createClass({
 	render: function() {
+	   
+		
 	return( <div>
-	   <label for="pricingScenario">Pricing Scenario</label>
+	   <label id="pricingScenario">Pricing Scenario</label>
        <input   id="pricingScenario" placeholder="pricing scenario" >
 		</input>
 		
@@ -199,7 +183,10 @@
 
   ReactDOM.render(
     <div>
+   
+    <div id="container">
 	<div className="tagGroup">
+	
 	<Card color="#A0A295" tagType="eTag150W"  height="16" width="32" />
 	<Card color="#A0A295" tagType="eTag250"  height="16" width="60" />
 	<Card color="#A0A295" tagType="eTag400W"  height="32" width="60" />
@@ -217,15 +204,12 @@
     <Card color="#D1D5D5" tagType="eTag750"  height="106" width="173" />
 	<Card color="#D1D5D5" tagType="eTag750Color"  height="106" width="173" />
 	</div>
-	
-	
-	
-	</div>,
-    document.querySelector("#container")
+	</div> 
+	<div id="rightPane">{InputPricingScen}</div>
+	<div id="createButtonDiv"><button  type="submit">{CreateButtonDiv}</button></div></div>,
+    document.querySelector("#bigPane")
   );
   </script>
-
-
 
 </body>
 </html>
