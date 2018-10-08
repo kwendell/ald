@@ -17,24 +17,8 @@
 		  width:70%;
 		  float: left;
 		  }
-    #submit {
-	 border: 6px solid #336;
-	}
+   
 	
-	#rightPane {
-	      padding: 30px;
-		  background-color: #F8F8F8;
-		  float: left;
-		  width: 12%;
-		  border-left: 4px solid #25538F;
-		  height: 400px;
-		  margin-top: 30px;
-		  font-family: sans-serif;
-		  font-size: 1em;
-		  font-weight: bold;
-		  position: relative;
-		
-		}
 		
 	#bottomPane {
 	    float: left;
@@ -119,12 +103,24 @@
 	});
     var InputPricingScen = React.createClass({
 	render: function() {
-	   
+	var rightPaneStyle = { 
+	      padding: "30px",
+		  backgroundColor: "#F8F8F8",
+		  float: "left",
+		  width: "12%",
+		  borderLeft: "4px solid #25538F",
+		  height: "400px",
+		  marginTop: "30px",
+		  fontFamily: "sans-serif",
+		  fontSize: "1em",
+		  fontWeight: "bold",
+		  position: "relative",};
+    
 		
 	return( 
 	  
-	   <div id="rightPane">
-	   <label id="pricingScenario">Pricing Scenario</label>
+	   <div style={rightPaneStyle}>
+	   <label>PricingScenario</label>
        <input   id="pricingScenario" placeholder="pricing scenario" >
 		</input>
 	   </div>
@@ -185,7 +181,7 @@
 			   };
 	    
 			   return (
-			     <div style={labelStyle}><input  type="checkbox">{this.props.tagType}></input></div>);
+			     <div style={labelStyle}><input  type="checkbox">{this.props.tagType}</input></div>);
 	    }
 	});
 
