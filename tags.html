@@ -111,16 +111,8 @@
     var CreateButtonDiv = React.createClass({
 	
 	render: function() {
-	var  buttonStyle = {
-	 padding: "8",
-	 fontSize: "18",
-	 fontFamily: "sans-serif",
-	 fontWeight: "bold",
-	 backgroundColor: "#0066FF",
-	 color: "#FFF",
-	 border: "2px solid #0066FF",
-	};
-	  return(<div><input type="submit" value="Create" type="submit"/></div>);}
+	//<input type="submit" value="Create" type="submit"/>
+	  return(<div id="creatButtonDiv"><input type="submit" value="Create" type="submit"/></div>);}
 	});
     var InputPricingScen = React.createClass({
 	render: function() {
@@ -215,7 +207,12 @@
 	</div>
 	</div>
 	 
-	<div id="rightPane">{InputPricingScen}</div>
+	<div id="rightPane"><div>
+	   <label id="pricingScenario">Pricing Scenario</label>
+       <input   id="pricingScenario" placeholder="pricing scenario" >
+		</input>
+		
+    </div></div>
 	<div id="createButtonDiv"><input type="submit" value="Create" type="submit"/></div>
 	</div>,
     document.querySelector("#bigPane")
