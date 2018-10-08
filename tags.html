@@ -10,11 +10,7 @@
 	body {
 	background-color:#F9F9F9;
 	//background-color:#FF;
-	}
-	 
-	 
-	
-	
+}
 	</style>
 </head>
 
@@ -130,7 +126,7 @@
 			   };
 	    
 			   return (
-			     <div style={labelStyle}><input  type="checkbox">{this.props.tagType}</input></div>);
+			     <div style={labelStyle}><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">{this.props.tagType}</label></div>);
 	    }
 	});
 	
