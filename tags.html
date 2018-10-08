@@ -43,24 +43,9 @@
 		height: 50px;
 	}
 	
-	#createButtonDiv {
-	  float: left;
-	  float: left;
-		width: 100%;
-		text-align: center;
-		 border-top: 4px solid #25538F;
-		 padding-top: 10px;
-	}
 	
-	#createButtonDiv input {
-	 padding: 8px;
-	 font-size: 18px;
-	 font-family: sans-serif;
-	 font-weight: bold;
-	 background-color: #0066FF;
-	 color: #FFF;
-	 border: 2px solid #0066FF;
-	}
+	
+	
 		  
 	
 	 
@@ -112,18 +97,40 @@
 	
 	render: function() {
 	//<input type="submit" value="Create" type="submit"/>
-	  return(<div id="creatButtonDiv"><input type="submit" value="Create" type="submit"/></div>);}
+	var createButtonStyle =  {
+	  float: "left",
+	  width: "100%",
+	  textAlign: "center",
+	  borderTop: "4px  solid  #25538F",
+	  paddingTop: "10px",
+	 
+	};
+	var buttonStyle = { backgroundColor: "#0066FF",
+	 color: "#FFF",
+	 padding: "8px",
+	 fontSize: "18px",
+	 fontFamily: "sans-serif",
+	 fontWeight: "bold",
+	 backgrounColor: "#0066FF",
+	 border: "2px solid #0066FF",
+	 
+	 };
+	  return(<div style={createButtonStyle}><input style={buttonStyle} type="submit" value="Create" type="submit"/></div>);}
 	});
     var InputPricingScen = React.createClass({
 	render: function() {
 	   
 		
-	return( <div>
+	return( 
+	  
+	   <div id="rightPane">
 	   <label id="pricingScenario">Pricing Scenario</label>
        <input   id="pricingScenario" placeholder="pricing scenario" >
 		</input>
+	   </div>
+      
 		
-    </div>	);}});
+    	);}});
     
 	var Square = React.createClass(
 	{
@@ -207,13 +214,10 @@
 	</div>
 	</div>
 	 
-	<div id="rightPane"><div>
-	   <label id="pricingScenario">Pricing Scenario</label>
-       <input   id="pricingScenario" placeholder="pricing scenario" >
-		</input>
-		
-    </div></div>
-	<div id="createButtonDiv"><input type="submit" value="Create" type="submit"/></div>
+	
+	<InputPricingScen/>	
+    
+	<CreateButtonDiv/>
 	</div>,
     document.querySelector("#bigPane")
   );
