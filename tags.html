@@ -11,46 +11,14 @@
 	background-color:#F9F9F9;
 	//background-color:#FF;
 	}
-	   #container {
-	      padding: 30px;
-		 
-		  width:70%;
-		  float: left;
-		  }
-   
-	
-		
-	#bottomPane {
-	    float: left;
-		width: 100%;
-		position: relative;
-		height: 50px;
-	}
-	
-	
-	
-	
-		  
-	
 	 
-	
-	#rightPane button {
-	 margin-top:30px;
-	 }
-	 
-	 #rightPane input {
-	 margin-top: 10px;
-	 }
-	 
-	
-	 
-	
 	 
 	 .tagGroup {
 	  padding: 1px;
-		  background-color: #0;
-		  width:100%;
-		  float: left;
+	  background-color: #0;
+	  width:70%;
+      float: left;
+      padding: 30px;
 		   
 		  }
 	 
@@ -173,14 +141,18 @@
 			     <div style={labelStyle}><input  type="checkbox">{this.props.tagType}</input></div>);
 	    }
 	});
-
-
-  ReactDOM.render(
-    <div>
-   
-    <div id="container">
-	<div className="tagGroup">
 	
+	var TagGroup = new React.createClass({
+	render: function() {
+	var tagGroupStyles = {
+	 padding: "1px",
+	 backgroundColor: "#0",
+	 width:"70%",
+     float: "left",
+     padding: "30px",
+	}; 
+	
+	return(<div style={tagGroupStyles}>
 	<Card color="#A0A295" tagType="eTag150W"  height="16" width="32" />
 	<Card color="#A0A295" tagType="eTag250"  height="16" width="60" />
 	<Card color="#A0A295" tagType="eTag400W"  height="32" width="60" />
@@ -196,12 +168,16 @@
 	<Card color="#D1D5D5" tagType="eTag583Color"  height="112" width="150" />
     <Card color="#D1D5D5" tagType="eTag750"  height="106" width="173" />
 	<Card color="#D1D5D5" tagType="eTag750Color"  height="106" width="173" />
-	</div>
-	</div>
-	 
+	</div>);
+	}
+	});
 	
+
+
+  ReactDOM.render(
+    <div>
+	<TagGroup/>
 	<InputPricingScen/>	
-    
 	<CreateButtonDiv/>
 	</div>,
     document.querySelector("#bigPane")
