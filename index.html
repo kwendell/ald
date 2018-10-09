@@ -6,22 +6,110 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
    <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.js"></script>
-  <style>#container { padding: 50 px; background-color: #EEE;}
+   
+  <style>#container { padding: 50 px; }
          #container h1{ font-size: 48px; font-family: sans-serif;color: #0080A8;}
  #container div{ font-size: 42px; font-family: sans-serif;color: #0080A8;}
  #header { float: center; margin-left: 0px; width:10%;height:100px;
-           }
+         }
+		 body {background-color: #F9F9F9;}
  #header img { height: 50px; }
  li {list-style:none}
  
- 
+ #submit {
+	 border: 6px solid #336;
+	}
+	
+	#rightPane {
+	      padding: 30px;
+		  background-color: #F8F8F8;
+		  float: left;
+		  width: 12%;
+		  border-left: 4px solid #25538F;
+		  height: 400px;
+		  margin-top: 30px;
+		  font-family: sans-serif;
+		  font-size: 1em;
+		  font-weight: bold;
+		  position: relative;
+		
+		}
+		
+	#bottomPane {
+	    float: left;
+		width: 100%;
+		position: relative;
+		height: 50px;
+	}
+	
+	#createButtonDiv {
+	  float: left;
+		width: 100%;
+		text-align: center;
+		 border-top: 4px solid #25538F;
+		 padding-top: 10px;
+	}
+	
+	button {
+	 padding: 8px;
+	 font-size: 18px;
+	 font-family: sans-serif;
+	 font-weight: bold;
+	 background-color: #0066FF;
+	 color: #FFF;
+	 border: 2px solid #0066FF;
+	}
+		  
+	label {
+	 font-family: sans-serif;
+	 }
+	 
+	
+	#rightPane button {
+	 margin-top:30px;
+	 }
+	 
+	 #rightPane input {
+	 margin-top: 10px;
+	 }
+	 
+	 #rightPane > div {
+	    position: absolute;
+        top: 40%;
+        left: 40%;
+        height: 30%;
+		width: 50%;
+        margin: -15% 0 0 -25%;
+	 }
+	
+	 
+	 .tagGroup {
+	  padding: 1px;
+		  background-color: #0;
+		  width:100%;
+		  float: left;
+		   
+		  }
+	 
+	 .lcdTagGroup {
+	  padding: 25px;
+		  background-color: #0;
+		  width:100%;
+		  float: left;
+		  }
+		  
+	
+	
 </style>
+ 
 </head>
 
 <body>
 
 <div id="container"></div>
   <script type="text/babel">
+  
+  
 var {Router,
        Route,
 	   IndexRoute,
@@ -54,7 +142,7 @@ var HomeScreen = React.createClass({
   render: function() {return <div><Header/>{this.props.children}</div>}});
   
   var NewOrUpdate = React.createClass({
-  doSomething: function(e) {console.log("do something");},
+  
   render: function() {return <div>
   <ul>
   <li><Link to="/edit">Edit</Link></li>
@@ -63,12 +151,158 @@ var HomeScreen = React.createClass({
   
   </ul>
  
-</div>}})
+</div>}});
+
+ var CreateButtonDiv = React.createClass({
+	
+	render: function() {
+	//<input type="submit" value="Create" type="submit"/>
+	var createButtonStyle =  {
+	  float: "left",
+	  width: "100%",
+	  textAlign: "center",
+	  borderTop: "4px  solid  #25538F",
+	  paddingTop: "10px",
+	 
+	};
+	var buttonStyle = { backgroundColor: "#0066FF",
+	 color: "#FFF",
+	 padding: "8px",
+	 fontSize: "18px",
+	 fontFamily: "sans-serif",
+	 fontWeight: "bold",
+	 backgrounColor: "#0066FF",
+	 border: "2px solid #0066FF",
+	 
+	 };
+	  return(<div style={createButtonStyle}><input style={buttonStyle} type="submit" value="Create" type="submit"/></div>);}
+	});
+    var InputPricingScen = React.createClass({
+	render: function() {
+	var rightPaneStyle = { 
+	      padding: "30px",
+		  float: "left",
+		  width: "12%",
+		  borderLeft: "4px solid #25538F",
+		  height: "400px",
+		  marginTop: "30px",
+		  fontFamily: "sans-serif",
+		  fontSize: "1em",
+		  fontWeight: "bold",
+		  position: "relative",};
+    
+		
+	return( 
+	  
+	   <div style={rightPaneStyle}>
+	   <label>PricingScenario</label>
+       <input   id="pricingScenario" placeholder="pricing scenario" >
+		</input>
+	   </div>
+      
+		
+    	);}});
+    
+	var Square = React.createClass(
+	{
+	  render: function() {
+	   var squareStyle = {
+	     height: this.props.height,
+		 width:  this.props.width,
+		 backgroundColor: this.props.color,
+		 border: '6px solid white', 
+		 borderRadius:5,
+		 fontFamily: "sans-serif",
+	     fontWeight: "bold",
+		 padding: 1,
+	     margin: 0,
+		
+		   WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+		  filter: "drop-shadow(0px 0px 5px #666)"
+	   };
+	   
+	   return (<div  style={squareStyle}>{this.props.tagType}
+	   </div>);
+	  } 
+	});
+	 var Card = React.createClass({
+      render: function() {
+	  var cardStyle =  {
+	   
+		  width: "25%",
+		  padding: 0,
+		  
+		  float:"left",
+		  
+		
+		};
+		
+	   return (<div style={cardStyle}><Square color={this.props.color} height={this.props.height} width={this.props.width}  />
+	                                  <Label tagType={this.props.tagType} /></div>);
+	   }
+    });
+	
+	var Label = React.createClass({
+	    render: function() {
+		  var labelStyle={
+		       fontFamily: "sans-serif",
+			   fontWeight: "bold",
+			   paddingLeft: 1,
+			   paddingTop: 6,
+			   paddingBottom: 12,
+			   margin: 0,
+			   fontSize: 12,
+			   
+			   };
+	    
+			   return (
+			     <div style={labelStyle}><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">{this.props.tagType}</label></div>);
+	    }
+	});
+	
+	var TagGroup = new React.createClass({
+	render: function() {
+	var tagGroupStyles = {
+	 padding: "1px",
+	 //backgroundColor: "#F9F9F9",
+	 width:"75%",
+     float: "left",
+     padding: "12px",
+	}; 
+	
+	return(<div style={tagGroupStyles}>
+	<Card color="#A0A295" tagType="eTag150W"  height="16" width="32" />
+	<Card color="#A0A295" tagType="eTag250"  height="16" width="60" />
+	<Card color="#A0A295" tagType="eTag400W"  height="32" width="60" />
+    <Card color="#D1D5D5" tagType="eTag150E2"  height="35" width="35" />
+	<Card color="#D1D5D5" tagType="eTag150Color"  height="35" width="35" />
+	<Card color="#D1D5D5" tagType="eTag210E"  height="26" width="53" />
+	<Card color="#D1D5D5" tagType="eTag210Color"  height="26" width="53" />
+	<Card color="#D1D5D5" tagType="eTag290E"  height="32" width="74" />
+	<Card color="#D1D5D5" tagType="eTag290Color"  height="32" width="74" />
+	<Card color="#D1D5D5" tagType="eTag420E"  height="75" width="100" />
+	<Card color="#D1D5D5" tagType="eTag420Color"  height="75" width="100" />
+	<Card color="#D1D5D5" tagType="eTag583E"  height="112" width="150" />
+	<Card color="#D1D5D5" tagType="eTag583Color"  height="112" width="150" />
+    <Card color="#D1D5D5" tagType="eTag750"  height="106" width="173" />
+	<Card color="#D1D5D5" tagType="eTag750Color"  height="106" width="173" />
+	</div>);
+	}
+	});
+	
+  var BigView = React.createClass({
+    render: function() {
+	return ( <div>
+	<TagGroup/>
+	<InputPricingScen/>	
+	<CreateButtonDiv/>
+	</div>);}
+	});
 
   ReactDOM.render(<Router>
    <Route path="/" component={HomeScreen}>
      <IndexRoute component={NewOrUpdate}/>
-	 <Route path="/new" component={NewLayout}/>
+	 <Route path="/new" component={BigView}/>
 	 <Route path="/edit" component={EditLayout} />
    </Route>
   
