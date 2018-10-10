@@ -13,18 +13,7 @@
            }
  #header img { height: 50px; }
  
- #myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 14px; /* Increase font-size */
-}
-
-#myTable th, #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 4px; /* Add padding */
-}
-
+ 
 #myTable tr {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd; 
@@ -63,22 +52,27 @@ var Header = React.createClass({
 var HomeScreen = React.createClass({
   render: function() {return <div><Header/><LayoutTree/></div>}});
   var myTableStyles = {
-  fontSize: "14px",
-  width: "100%",};
-  var tableElementStyles ={ 
-  textAlign: "left",
+    fontSize: "14px",
+    width: "100%",
+  };
+  var tableRowStyles ={ 
+    textAlign: "left",
     padding: "4px",
 	};
+  var tableElementStyles = {
+  borderBottom: "1px solid #ddd",
+  };
+  
   var LayoutTree = React.createClass({
   doSomething: function(e) {console.log("do something");},
   render: function() {return <div><table style={myTableStyles}><tbody>
-  <tr style={tableElementStyles}>
-   <th > Select Tag Type </th>
-    <th>Sell Method</th>
+  <tr style={tableRowStyles}>
+   <th style={tableElementStyles}> Select Tag Type </th>
+    <th style={tableElementStyles}>Sell Method</th>
   </tr>
   
-  <tr style={tableElementStyles}>
-    <td><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150</label></td>  
+  <tr >
+    <td ><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150</label></td>  
    
     <td>PROMO</td>
   </tr>
