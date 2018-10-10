@@ -62,16 +62,22 @@ var Header = React.createClass({
 
 var HomeScreen = React.createClass({
   render: function() {return <div><Header/><LayoutTree/></div>}});
-  
+  var myTableStyles = {
+  fontSize: "14px",
+  width: "100%",};
+  var tableElementStyles ={ 
+  textAlign: "left",
+    padding: "4px",
+	};
   var LayoutTree = React.createClass({
   doSomething: function(e) {console.log("do something");},
-  render: function() {return <div><table id="myTable"><tbody>
-  <tr >
-   <th> Select Tag Type </th>
-    <th >Sell Method</th>
+  render: function() {return <div><table style={myTableStyles}><tbody>
+  <tr style={tableElementStyles}>
+   <th > Select Tag Type </th>
+    <th>Sell Method</th>
   </tr>
   
-  <tr onClick={this.doSomething}>
+  <tr style={tableElementStyles}>
     <td><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150</label></td>  
    
     <td>PROMO</td>
