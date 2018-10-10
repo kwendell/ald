@@ -143,10 +143,12 @@ var HomeScreen = React.createClass({
   
   var NewOrUpdate = React.createClass({
   
-  render: function() {return <div>
+  render: function() {
+  var linkStyle = {textDecoration: "none",};
+  return <div>
   <ul>
-  <li><Link to="/edit">Edit</Link></li>
-  <li><Link to="/new">New</Link></li>
+  <li><Link style={linkStyle} to="/edit">Edit</Link></li>
+  <li><Link Link style={linkStyle} to="/new">New</Link></li>
   
   
   </ul>
