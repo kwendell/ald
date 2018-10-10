@@ -7,13 +7,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
    <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.js"></script>
    
-  <style>#container { padding: 50 px; }
+  <style>#container { padding: 24 px; }
          #container h1{ font-size: 48px; font-family: sans-serif;color: #0080A8;}
  #container div{ font-size: 42px; font-family: sans-serif;color: #0080A8;}
  #header { float: center; margin-left: 0px; width:10%;height:100px;
          }
 		 body {background-color: #F9F9F9;}
- #header img { height: 50px; }
+ #header img { height: 48px; }
  li {list-style:none}
  
  #submit {
@@ -180,22 +180,24 @@ var HomeScreen = React.createClass({
     var InputPricingScen = React.createClass({
 	render: function() {
 	var rightPaneStyle = { 
-	      padding: "30px",
+	      padding: "12px",
 		  float: "left",
 		  width: "12%",
 		  borderLeft: "4px solid #25538F",
 		  height: "400px",
-		  marginTop: "30px",
+		  marginTop: "24px",
 		  fontFamily: "sans-serif",
 		  fontSize: "1em",
 		  fontWeight: "bold",
 		  position: "relative",};
+		  
+	var labelStyle = {fontSize:"24px"};
     
 		
 	return( 
 	  
 	   <div style={rightPaneStyle}>
-	   <label>PricingScenario</label>
+	   <label style={labelStyle} >PricingScenario</label>
        <input   id="pricingScenario" placeholder="pricing scenario" >
 		</input>
 	   </div>
