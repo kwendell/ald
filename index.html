@@ -180,7 +180,7 @@ var HomeScreen = React.createClass({
     var InputPricingScen = React.createClass({
 	render: function() {
 	var rightPaneStyle = { 
-	      padding: "12px",
+	      padding: "8px",
 		  float: "left",
 		  width: "12%",
 		  borderLeft: "4px solid #25538F",
@@ -191,13 +191,13 @@ var HomeScreen = React.createClass({
 		  fontWeight: "bold",
 		  position: "relative",};
 		  
-	var labelStyle = {fontSize:"24px"};
+	var labelStyle = {fontSize:"18px"};
     
 		
 	return( 
 	  
 	   <div style={rightPaneStyle}>
-	   <label style={labelStyle} >PricingScenario</label>
+	   <label style={labelStyle} >Form Identifer</label>
        <input   id="pricingScenario" placeholder="pricing scenario" >
 		</input>
 	   </div>
@@ -270,6 +270,8 @@ var HomeScreen = React.createClass({
 	 width:"75%",
      float: "left",
      padding: "12px",
+	  display: "flex",
+     flexWrap: "wrap",
 	}; 
 	
 	return(<div style={tagGroupStyles}>
