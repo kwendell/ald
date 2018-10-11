@@ -16,6 +16,11 @@
  #header img { height: 48px; }
  li {list-style:none}
  
+ #myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+ 
  #submit {
 	 border: 6px solid #336;
 	}
@@ -310,11 +315,97 @@ var HomeScreen = React.createClass({
 	</div>);}
 	});
 
+	var EditListScreen = React.createClass({
+  render: function() {return <div><LayoutTree/></div>}});
+  var myTableStyles = {
+    fontSize: "14px",
+    width: "100%",
+	fontFamily: "sans-serif",
+  };
+  var tableRowStyles ={ 
+    textAlign: "left",
+    padding: "4px",
+	};
+  var tableElementStyles = {
+  borderBottom: "1px solid #ddd",
+  };
+  
+  var LayoutTree = React.createClass({
+  
+  render: function() {return <div><table style={myTableStyles} id="myTable"><tbody>
+  <tr style={tableRowStyles}>
+   <th style={tableElementStyles}> Select Tag Type </th>
+    <th style={tableElementStyles}>Form Identifier</th>
+  </tr>
+  
+  <tr >
+    <td ><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150</label></td>  
+   
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+  <td><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150</label></td>
+    
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150 Color</label></td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag150 Color</label></td>
+    <td>DEFAULT</td>
+  </tr>
+  <tr onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag210<label htmlFor="tag_type"></label></td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag210<label htmlFor="tag_type"></label></td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag210 Color<label htmlFor="tag_type"></label></td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag290 Color<label htmlFor="tag_type"></label></td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag290<label htmlFor="tag_type"></label></td>
+    <td>PROMO</td>
+  </tr>
+   
+  <tr  onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag290<label htmlFor="tag_type"></label></td>
+    <td>DEFAULT</td>
+  </tr>
+  
+  <tr onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/>eTag290 Color<label htmlFor="tag_type"></label></td>
+    <td>PROMO</td>
+  </tr>
+  
+  <tr onClick={this.doSomething}>
+    <td><input  type="checkbox" id="tag_type"/><label htmlFor="tag_type">eTag290 Color</label></td>
+    <td>DEFAULT</td>
+  </tr>
+ 
+ </tbody>
+</table></div>}})
   ReactDOM.render(<Router>
    <Route path="/" component={HomeScreen}>
      <IndexRoute component={NewOrUpdate}/>
 	 <Route path="/new" component={BigView}/>
-	 <Route path="/edit" component={EditLayout} />
+	 <Route path="/edit" component={EditListScreen} />
    </Route>
   
    
