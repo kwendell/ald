@@ -160,10 +160,10 @@ var HomeScreen = React.createClass({
 	render: function() {
 	//<input type="submit" value="Create" type="submit"/>
 	var createButtonStyle =  {
-	  float: "left",
+	  //float: "left",
+	 
 	  width: "100%",
-	  textAlign: "center",
-	  borderTop: "4px  solid  #25538F",
+	  margin: "auto",
 	  paddingTop: "10px",
 	 
 	};
@@ -173,8 +173,10 @@ var HomeScreen = React.createClass({
 	 fontSize: "18px",
 	 fontFamily: "sans-serif",
 	 fontWeight: "bold",
+	 textAlign: "center",
 	 backgrounColor: "#0066FF",
 	 border: "2px solid #0066FF",
+	 
 	 
 	 };
 	  return(<div style={createButtonStyle}><input style={buttonStyle} type="submit" value="Create" type="submit"/></div>);}
@@ -182,7 +184,8 @@ var HomeScreen = React.createClass({
     var InputPricingScen = React.createClass({
 	render: function() {
 	var rightPaneStyle = { 
-	      padding: "8px",
+	      padding: "12px",
+		  marginLeft: "12px",
 		  float: "left",
 		  width: "12%",
 		  borderLeft: "4px solid #25538F",
@@ -193,16 +196,18 @@ var HomeScreen = React.createClass({
 		  fontWeight: "bold",
 		  position: "relative",};
 		  
-	var labelStyle = {fontSize:"18px"};
+	var labelStyle = {fontSize:"16px",width:"85%"};
     
 		
 	return( 
 	  
 	   <div style={rightPaneStyle}>
-	   <label style={labelStyle} >Form Identifer</label>
+	   <label style={labelStyle} >Form Identifier</label>
        <input   id="pricingScenario" placeholder="pricing scenario" >
 		</input>
+		<CreateButtonDiv/>
 	   </div>
+	   
       
 		
     	);}});
@@ -301,7 +306,7 @@ var HomeScreen = React.createClass({
 	return ( <div>
 	<TagGroup/>
 	<InputPricingScen/>	
-	<CreateButtonDiv/>
+
 	</div>);}
 	});
 
