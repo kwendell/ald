@@ -6,30 +6,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
   <style>#container { padding: 10 px; background-color: #E4EDF4;}
-        
- #container div{ font-size: 48px; font-family: sans-serif}
- ul {list-style:none}
- #header { float: center; margin-left: 0px; width:10%;height:100px;
-           }
- #header img { height: 50px; }
- 
- 
-#myTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd; 
-}
-
+   
 #myTable tr.header, #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
 }
 
-
-
-td a{width:100%;display:block;}
-
-
- 
  
 </style>
 </head>
@@ -41,19 +23,12 @@ td a{width:100%;display:block;}
 
 var destination =  document.querySelector('#container'); 
 
-var Header = React.createClass({
-
-  render: function() {
-  return <div id="header"><img src="img/Final-logo-landscape.jpg"></img></div>
-  }
-
-});
-
-var HomeScreen = React.createClass({
-  render: function() {return <div><Header/><LayoutTree/></div>}});
+var EditListScreen = React.createClass({
+  render: function() {return <div><LayoutTree/></div>}});
   var myTableStyles = {
     fontSize: "14px",
     width: "100%",
+	fontFamily: "sans-serif",
   };
   var tableRowStyles ={ 
     textAlign: "left",
@@ -64,11 +39,11 @@ var HomeScreen = React.createClass({
   };
   
   var LayoutTree = React.createClass({
-  doSomething: function(e) {console.log("do something");},
-  render: function() {return <div><table style={myTableStyles}><tbody>
+  
+  render: function() {return <div><table style={myTableStyles} id="myTable"><tbody>
   <tr style={tableRowStyles}>
    <th style={tableElementStyles}> Select Tag Type </th>
-    <th style={tableElementStyles}>Sell Method</th>
+    <th style={tableElementStyles}>Form Identifier</th>
   </tr>
   
   <tr >
@@ -135,7 +110,7 @@ var HomeScreen = React.createClass({
  </tbody>
 </table></div>}})
 
-  ReactDOM.render(<div><HomeScreen /></div>, destination );
+  ReactDOM.render(<div><EditListScreen /></div>, destination );
   </script>
 </body>
 

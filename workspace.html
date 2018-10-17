@@ -25,16 +25,10 @@
 
 var destination =  document.querySelector('#container'); 
 
-var Header = React.createClass({
 
-  render: function() {
-  return <div id="header"><img src="img/Final-logo-landscape.jpg"></img></div>
-  }
 
-});
-
-var AldScreen = React.createClass({
-  render: function() {return <div><div><Header/><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
+var Workspace = React.createClass({
+  render: function() {return <div><div><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
   
 var Design = React.createClass({
   
@@ -132,7 +126,7 @@ render:function() {
 }
 );
 
-ReactDOM.render(<div><AldScreen /></div>, destination );
+ReactDOM.render(<div><Workspace /></div>, destination );
 
 
   </script>
