@@ -423,7 +423,7 @@ var Design = React.createClass({
   border: "4px solid #25538F",
   };
   
-  return <div style={designStyle}><div><canvas style={canvasStyle} width="500" height="100"></canvas ></div></div>}
+  return <div style={designStyle}><div><canvas id="o" style={canvasStyle} width="500" height="250"></canvas ></div></div>}
 });  
 
 var InfoFooter = React.createClass({
@@ -462,6 +462,22 @@ addItem: function(e) {
 	console.log("works");
 	 e.preventDefault();
 	 },
+	componentDidMount: function() {
+	  console.log("componentDidMount");
+	  var canvas = new fabric.Canvas('o');
+  
+      var rect = new fabric.Rect({
+          left: 20,
+	      top: 20,
+	      fill: 'red',
+	      width: 100,
+	      height: 100,
+	  });
+	  
+	  canvas.add(rect);
+	
+	
+	},
 
 render:function() {
  var liStyle = {
@@ -532,6 +548,7 @@ render:function() {
    
  
   </Router>, destination );
+  
   </script>
 </body>
 
