@@ -456,6 +456,7 @@ var InfoFooter = React.createClass({
 var DataDictionary = React.createClass({
 addItem: function(e) {
 	console.log("works");
+	 e.preventDefault();
 	 },
 
 render:function() {
@@ -490,7 +491,7 @@ render:function() {
 	   mnems.sort();
 	   var liArray = [];
 	   for (var i=0;i<mnems.length;i++)  {
-	   liArray.push(<tr key={3*i} style={trStyle}><td key={i+1} style={liStyle}>{mnems[i]}</td><td key={i+2} style={liStyle} ><button  key={i+2000} type="submit">+</button></td></tr>)
+	   liArray.push(<tr key={3*i} style={trStyle}><td key={i+1} style={liStyle}>{mnems[i]}</td><td key={i+2} style={liStyle} ><button onClick={this.addItem} key={i+2000} type="submit">+</button></td></tr>)
 	   }
 	   
 	  
