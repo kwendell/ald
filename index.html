@@ -408,6 +408,8 @@ var Workspace = React.createClass({
   render: function() {return <div><div><DataDictionary/><Design/></div><div><InfoFooter/></div></div>}});
   
 var Design = React.createClass({
+
+
   
   render: function() {
   
@@ -422,8 +424,8 @@ var Design = React.createClass({
   var canvasStyle = {
   border: "4px solid #25538F",
   };
-  
-  return <div style={designStyle}><div><canvas id="o" style={canvasStyle} width="500" height="250"></canvas ></div></div>}
+  //<canvas ref="c" id = "c"></canvas>
+  return <div style={designStyle}><div><canvas ref="c" id="o" style={canvasStyle} width="500" height="250"></canvas ></div></div>}
 });  
 
 var InfoFooter = React.createClass({
@@ -458,23 +460,36 @@ var InfoFooter = React.createClass({
 });
 
 var DataDictionary = React.createClass({
+
 addItem: function(e) {
-	console.log("works");
+	
 	 e.preventDefault();
+	 
+	
+    // var canvas = new fabric.Canvas('o');
+	var canvas = document.getElementById("o").fabric;
+	 
+      var dummy = new fabric.Rect({
+          left: 20,
+	      top: 20,
+	     // fill: '#F9F9F9',
+		 fill: 'red',
+	      width: 100,
+	      height: 100,
+		  borderColor: 'black',
+	  });
+	 
+	  canvas.add(dummy);
+	  canvas.setActiveObject(dummy);
+	
 	 },
 	componentDidMount: function() {
 	  console.log("componentDidMount");
-	  var canvas = new fabric.Canvas('o');
-  
-      var rect = new fabric.Rect({
-          left: 20,
-	      top: 20,
-	      fill: 'red',
-	      width: 100,
-	      height: 100,
-	  });
+	  var x = new fabric.Canvas('o');
+     document.getElementById("o").fabric = x;
+	 
 	  
-	  canvas.add(rect);
+  
 	
 	
 	},
