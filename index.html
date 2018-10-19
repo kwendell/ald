@@ -477,14 +477,32 @@ addItem: function(e) {
 	      width: 100,
 	      height: 40,
 		  opacity: 0.1,
-		  stroke : 'black',
-          strokeWidth : 1
+		 // stroke : 'blue',
+         // strokeWidth : 1
 
 		 
 	  });
+	  
+	  var text = new fabric.Text(e.target.id, {
+      fontSize: 12,
+      //originX: 'center',
+      //originY: 'center',
+	   //left: 20,
 	 
-	  canvas.add(dummy);
-	  canvas.setActiveObject(dummy);
+      });
+	  
+	  var group = new fabric.Group([ dummy, text ], {
+      //left: 150,
+      //top: 100,
+      //angle: -10
+      });
+
+	  
+	 
+
+	 
+	  canvas.add(group);
+	  canvas.setActiveObject(group);
 	
 	 },
 	componentDidMount: function() {
